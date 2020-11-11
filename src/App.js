@@ -1,11 +1,15 @@
 import React from 'react';
+import { Header } from './components/layout/Header';
+import { Content } from './components/layout/Content';
+import { ProjectsProvider, SelectedProjectProvider } from './context';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Yes</h1>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => (
+	<SelectedProjectProvider>
+		<ProjectsProvider>
+			<div className='App'>
+				<Header />
+				<Content />
+			</div>
+		</ProjectsProvider>
+	</SelectedProjectProvider>
+);
