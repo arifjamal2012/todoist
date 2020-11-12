@@ -4,6 +4,7 @@ import { useTasks } from '../hooks';
 import { collectedTasks } from '../constants';
 import { getTitle, getCollectedTitle, colletedTasksExist } from '../helpers';
 import { useSelectedProjectValue, useProjectsValue } from '../context';
+import { AddTask } from './AddTask';
 
 export const Tasks = () => {
 	const { selectedProject } = useSelectedProjectValue();
@@ -14,11 +15,9 @@ export const Tasks = () => {
 
 	if (projects && selectedProject && !colletedTasksExist(selectedProject)) {
 		projectName = getTitle(projects, selectedProject).name;
-		console.log('projectName 1', projectName);
 	}
 	if (colletedTasksExist(selectedProject) && selectedProject) {
 		projectName = getCollectedTitle(collectedTasks, selectedProject).name;
-		console.log('projectName 2', projectName);
 	}
 
 	useEffect(() => {
@@ -38,6 +37,7 @@ export const Tasks = () => {
 					</li>
 				))}
 			</ul>
+			<AddTask />
 		</div>
 	);
 };

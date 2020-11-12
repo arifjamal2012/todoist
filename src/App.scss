@@ -247,7 +247,8 @@ header {
 		padding: 5px 0;
 
 		&-delete {
-			margin-left: auto;
+			margin-left: 170px;
+			margin-top: -18px;
 			display: none;
 
 			svg {
@@ -365,7 +366,7 @@ header {
 		@include box-overlay();
 		z-index: 99;
 		width: 200px;
-		padding: 10px;
+		padding: 15px;
 		top: 5px;
 		right: 0;
 		background-color: white;
@@ -379,7 +380,7 @@ header {
 		}
 
 		button {
-			@include btn('50px');
+			@include btn(60px);
 		}
 		span {
 			@include cancel();
@@ -454,5 +455,51 @@ header {
 				border-radius: 16px;
 			}
 		}
+	}
+}
+
+//Add Tasks
+
+.add-task {
+}
+.add-task__plus,
+.add-project__plus {
+	color: #dd4b39;
+	font-size: 18px;
+}
+.add-task__test,
+.add-project__text {
+	display: inline-block;
+	color: #545454;
+	font-size: 14px;
+	margin-left: 15px;
+}
+
+// Add Project
+.add-project {
+	padding-left: 13px;
+	padding-right: 20px;
+	margin-top: 20px;
+
+	&__input {
+		margin-bottom: 20px;
+	}
+
+	&__name {
+		width: 100%;
+		border: 1px solid #ddd;
+		background-color: white !important;
+		border-radius: 3px;
+		height: 35px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&__submit {
+		@include btn(100px);
+	}
+
+	&__cancel {
+		@include cancel();
 	}
 }
