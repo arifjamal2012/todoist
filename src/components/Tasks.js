@@ -13,9 +13,14 @@ export const Tasks = () => {
 
 	let projectName = '';
 
-	if (projects && selectedProject && !colletedTasksExist(selectedProject)) {
+	if (
+		projects.length > 0 &&
+		selectedProject &&
+		!colletedTasksExist(selectedProject)
+	) {
 		projectName = getTitle(projects, selectedProject).name;
 	}
+
 	if (colletedTasksExist(selectedProject) && selectedProject) {
 		projectName = getCollectedTitle(collectedTasks, selectedProject).name;
 	}
@@ -23,8 +28,6 @@ export const Tasks = () => {
 	useEffect(() => {
 		document.title = `${projectName}:Todoist`;
 	});
-
-	console.log('tasks', tasks);
 
 	return (
 		<div className='tasks' data-testid='tasks'>
