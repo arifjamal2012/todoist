@@ -203,10 +203,26 @@ header {
 						&.settings__add {
 							margin-right: 15px;
 							font-size: 30px;
+
+							button {
+								@include transparent-button();
+								color: white;
+								cursor: pointer;
+								font-size: 30px;
+							}
 						}
-						&.settings__dark-mode svg {
-							width: 20px;
-							height: 20px;
+						&.settings__darkmode {
+							button {
+								@include transparent-button();
+								color: white;
+								cursor: pointer;
+								display: flex;
+
+								svg {
+									width: 20px;
+									height: 20px;
+								}
+							}
 						}
 					}
 				}
@@ -235,21 +251,29 @@ header {
 	li {
 		padding-left: 10px;
 		padding-right: 15px;
-
 		&:hover .sidebar__project-delete {
 			//display: -webkit-box;
 			//display: -ms-flexbox;
-			display: block;
+			display: flex;
 		}
 	}
 
 	&__project {
 		cursor: pointer;
-		padding: 5px 0;
+
+		div:nth-child(1) {
+			padding-left: 10px;
+			padding-right: 15px;
+			padding: 5px 0;
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
 
 		&-delete {
-			margin-left: 170px;
-			margin-top: -18px;
+			//margin-left: 170px;
+			//margin-top: -18px;
+			margin-left: auto;
 			display: none;
 
 			svg {
@@ -330,7 +354,6 @@ header {
 
 	&__generic {
 		li {
-			padding: 10px 0 10px 10px;
 			list-style-type: none;
 			color: #333;
 			//display: -webkit-box;
@@ -339,14 +362,24 @@ header {
 			cursor: pointer;
 			line-height: 1.5;
 			font-size: 15px;
+			padding-left: 0;
+			padding-right: 0;
 
-			span:first-of-type {
-				margin-right: 10px;
+			div:nth-child(1) {
+				display: flex;
+				padding: 10px 0 10px 10px;
+				width: 100%;
 
-				svg {
-					width: 18px;
-					height: 18px;
-					color: #555;
+				span:first-of-type {
+					margin-right: 10px;
+					display: flex;
+					align-items: center;
+
+					svg {
+						width: 18px;
+						height: 18px;
+						color: #555;
+					}
 				}
 			}
 			&.active,
@@ -572,12 +605,19 @@ header {
 
 	&__list li {
 		@include task-item();
+		padding: 0;
+		div:nth-child(1) {
+			padding: 10px;
+			width: 100%;
+			display: flex;
+			align-items: center;
 
-		span:first-of-type {
-			margin-right: 10px;
+			span:first-of-type {
+				margin-right: 10px;
 
-			svg {
-				fill: grey;
+				svg {
+					fill: grey;
+				}
 			}
 		}
 	}
@@ -591,6 +631,12 @@ header {
 
 	&__list li {
 		@include task-item();
+		padding: 0;
+
+		div:nth-child(1) {
+			width: 100%;
+			padding: 10px;
+		}
 	}
 }
 

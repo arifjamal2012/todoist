@@ -26,7 +26,7 @@ export const Tasks = () => {
 	}
 
 	useEffect(() => {
-		document.title = `${projectName}:Todoist`;
+		document.title = `${projectName}: Todoist`;
 	});
 
 	return (
@@ -35,7 +35,7 @@ export const Tasks = () => {
 			<ul className='task__list'>
 				{tasks.map((task) => (
 					<li key={`${task.id}`}>
-						<Checkbox id={task.id} />
+						<Checkbox id={task.id} taskDesc={task.task} />
 						<span>{task.task}</span>
 					</li>
 				))}
